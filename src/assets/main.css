@@ -1,6 +1,7 @@
-@import './base.css';
+/* @import './base.css';
 
 #app {
+  min-width: 100vw;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -28,8 +29,14 @@ a,
   }
 
   #app {
+    min-width: 100vw;
+    max-width: 1280px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding: 0 2rem;
   }
+} */
+
+body {
+  margin: 0px;
 }
