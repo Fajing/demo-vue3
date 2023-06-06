@@ -7,7 +7,7 @@ const config: {
   /**
    * api请求基础路径
    */
-  base_url: '',
+  base_url: 'http://localhost:5173',
   /**
    * 接口成功返回状态码
    */

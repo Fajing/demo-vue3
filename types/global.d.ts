@@ -12,7 +12,8 @@ declare global {
     preferredSub?: string
     unpreferedSub1?: string
     unpreferedSub2?: string
-    intentionSubAndMaj?: string
+    intentionProv?: string[] | string
+    intentionSubAndMaj?: string[] | string
   }
 
   type SchoolInfo = {
@@ -59,7 +60,6 @@ declare global {
     success: boolean
     msg: string
     data: Array<SchoolInfo>
-
   }
 }
 

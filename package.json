@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --debug",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
@@ -12,8 +12,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@types/lodash-es": "^4.17.7",
     "axios": "^1.4.0",
     "element-plus": "^2.3.6",
+    "lodash-es": "^4.17.21",
     "mockjs": "^1.1.0",
     "pinia": "^2.0.36",
     "vue": "^3.3.2",
