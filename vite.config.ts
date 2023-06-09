@@ -24,7 +24,7 @@ export default defineConfig({
       //     console.log(proxyUrl)
       //   }
       // }
-      '/localSenlan': 'https://senlan.online'
+      // '/localSenlan': 'https://senlan.online'
     }
   }
 })

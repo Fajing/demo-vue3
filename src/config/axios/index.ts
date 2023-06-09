@@ -13,7 +13,8 @@ const request = (option: any) => {
     data,
     responseType: responseType,
     headers: {
-      'Content-Type': headersType || default_headers
+      'Content-Type': headersType || default_headers,
+      'Access-Control-Allow-Origin': '*'
     }
   })
 }

@@ -7,7 +7,7 @@ const config: {
   /**
    * api请求基础路径
    */
-  base_url: 'http://localhost:5173',
+  base_url: 'https://senlan.online',
   /**
    * 接口成功返回状态码
    */

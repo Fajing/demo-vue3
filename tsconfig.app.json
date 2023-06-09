@@ -3,10 +3,16 @@
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "types/*.d.ts"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
     "composite": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "esModuleInterop": true,
+    "types": ["element-plus/global"],
+    "typeRoots": ["./node_modules/@types/", "./types"]
   }
 }
