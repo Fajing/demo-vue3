@@ -34,6 +34,8 @@ export const ProvinceList = [
 
 export const UnpreferedSubList = ['化学', '生物', '政治', '地理']
 
+export const  UniversityNatureList= ['985高校', '211高校', '双一流']
+
 export const SubAndMajBenke: Map<string, Array<string>> = new Map([
   [
     '农学',

@@ -80,6 +80,25 @@
                       />
                     </el-select>
                   </el-form-item>
+                  <el-form-item label="接受中外合作">
+                    <el-select
+                      v-model="queryParam.zhongWai"
+                      placeholder="请选择"
+                    >
+                      <el-option label="是" value="是" />
+                      <el-option label="否" value="否" />
+                    </el-select>
+                  </el-form-item>
+                  <el-form-item label="高校性质">
+                    <el-checkbox-group v-model="queryParam.schoolAttr">
+                      <el-checkbox
+                        v-for="nature in UniversityNatureList"
+                        :key="nature"
+                        :label="nature"
+                        :name="nature"
+                      />
+                    </el-checkbox-group>
+                  </el-form-item>
                   <el-form-item label="意向省份">
                     <el-checkbox-group v-model="queryParam.intentionProv">
                       <el-checkbox
@@ -174,7 +193,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { querySchools, exportExcel } from './api/school-info'
-import { ProvinceList, SubAndMajBenke, SubAndMajZhuanke, UnpreferedSubList } from './utils/constant'
+import { ProvinceList, SubAndMajBenke, SubAndMajZhuanke, UnpreferedSubList, UniversityNatureList } from './utils/constant'
 import { cloneDeep } from 'lodash-es'
 import { ElMessage } from 'element-plus'
 
@@ -235,6 +254,7 @@ const onSubmit = async () => {
 }
 
 const handleClearCheckbox = () => {
+  queryParam.value.schoolAttr = []
   queryParam.value.intentionProv = []
   for (const key in checkboxValue.value) {
     if (Object.prototype.hasOwnProperty.call(checkboxValue.value, key)) {
@@ -245,9 +265,13 @@ const handleClearCheckbox = () => {
   }
 }
 
+/**
+ * 格式化请求数组
+ */
 const formatQueryParam = () : QueryParam => {
   formatCheckboxValue()
   const queryBody = cloneDeep(queryParam.value)
+  queryBody.schoolAttr = (queryBody.schoolAttr as String[]).toString()
   queryBody.intentionProv = (queryBody.intentionProv as String[]).toString()
   queryBody.intentionSubAndMaj = (queryBody.intentionSubAndMaj as String[]).toString()
   return queryBody
@@ -283,6 +307,8 @@ onMounted(async () => {
     preferredSub: '物理',
     unpreferedSub1: '化学',
     unpreferedSub2: '生物',
+    zhongWai: '是',
+    schoolAttr: [],
     intentionProv: [],
     intentionSubAndMaj: []
   }

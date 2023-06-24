@@ -12,6 +12,8 @@ declare global {
     preferredSub?: string
     unpreferedSub1?: string
     unpreferedSub2?: string
+    zhongWai?: string
+    schoolAttr?: string[] | string
     intentionProv?: string[] | string
     intentionSubAndMaj?: string[] | string
   }
