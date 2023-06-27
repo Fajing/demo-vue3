@@ -58,6 +58,52 @@ declare global {
     notes: string
   }
 
+  type BenkeMajorInfo = {
+    id?: number
+    majorCode1?: string
+    majorCode2?: string
+    subjectCode?: string
+    majorName?: string
+    subjectName?: string
+    mainSubjects?: string
+    degreeName?: string
+    length?: string
+    level?: string
+    majorCourse?: string
+    majorFeature?: string
+    careerProspects?: string
+    careerDirection?: string
+    jobs?: string
+    graduateDirection?: string
+    schoolRecommend?: string
+  }
+
+  type ZhuankeMajorInfo = {
+    id?: number
+    subjectCode?: string
+    majorCode?: string
+    majorName?: string
+    subjectName:? string
+    level?: string
+    careerProspects?: string
+    careerDirection?: string
+    jobs?: string
+    continueSecondaryMajors?: string
+    continueUndergraduateMajors?: string
+  }
+
+  type MajorInfoResp = {
+    success: boolean
+    msg: string
+    data: Array<BenkeMajorInfo> | Array<ZhuankeMajorInfo>
+  }
+
+  type MajorsResp = {
+    success: boolean
+    msg: string
+    data: { majorListOfBen: Array<string>; majorListOfZhuan: Array<string> }
+  }
+
   type RespSchools = {
     success: boolean
     msg: string

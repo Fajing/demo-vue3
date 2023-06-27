@@ -34,7 +34,11 @@ export const ProvinceList = [
 
 export const UnpreferedSubList = ['化学', '生物', '政治', '地理']
 
-export const  UniversityNatureList= ['985高校', '211高校', '双一流']
+export const UniversityNatureList = [
+  { name: '985高校', key: '985' },
+  { name: '211高校', key: '211' },
+  { name: '双一流', key: 'shuangyiliu' }
+]
 
 export const SubAndMajBenke: Map<string, Array<string>> = new Map([
   [
@@ -240,4 +244,9 @@ export const SubAndMajZhuanke: Map<string, Array<string>> = new Map([
     ]
   ],
   ['生物与化工大类', ['生物技术类', '化工技术类']]
+])
+
+export const SchoolLevel : Map<string, string> = new Map([
+  ['majorListOfBen', '本科'],
+  ['majorListOfZhuan', '专科']
 ])
